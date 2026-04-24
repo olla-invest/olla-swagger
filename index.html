@@ -6,20 +6,231 @@
   <title>Olla API Docs</title>
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css">
   <style>
-    body { margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; display: flex; }
+
+    /* 사이드바 */
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 220px;
+      height: 100vh;
+      background: #1a1a2e;
+      overflow-y: auto;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+    #sidebar-header {
+      padding: 20px 16px 14px;
+      border-bottom: 1px solid #2e2e4a;
+    }
+    #sidebar-header h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    #sidebar-header p {
+      margin: 4px 0 0;
+      font-size: 11px;
+      color: #6b6b8a;
+    }
+    #sidebar-nav {
+      padding: 10px 0;
+      flex: 1;
+    }
+    .nav-group-label {
+      padding: 10px 16px 4px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #5a5a7a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 12.5px;
+      color: #a0a0c0;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      user-select: none;
+    }
+    .nav-item:hover {
+      background: #22224a;
+      color: #ffffff;
+      border-left-color: #4a90d9;
+    }
+    .nav-item.active {
+      background: #1e2d4a;
+      color: #ffffff;
+      border-left-color: #4a90d9;
+    }
+    .nav-item .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* 태그별 색상 */
+    .dot-auth       { background: #e57373; }
+    .dot-mypage     { background: #81c784; }
+    .dot-watchlist  { background: #64b5f6; }
+    .dot-realtime   { background: #ffb74d; }
+    .dot-stock      { background: #ce93d8; }
+    .dot-theme      { background: #4db6ac; }
+    .dot-default    { background: #90a4ae; }
+
+    /* 메인 컨텐츠 */
+    #main {
+      margin-left: 220px;
+      flex: 1;
+      min-width: 0;
+    }
+    #swagger-ui { width: 100%; }
+
+    /* Swagger UI 상단 topbar 숨기기 (선택) */
+    .topbar { display: none !important; }
+
+    /* 스크롤바 */
+    #sidebar::-webkit-scrollbar { width: 4px; }
+    #sidebar::-webkit-scrollbar-track { background: transparent; }
+    #sidebar::-webkit-scrollbar-thumb { background: #2e2e4a; border-radius: 2px; }
   </style>
 </head>
 <body>
-  <div id="swagger-ui"></div>
+
+  <!-- 사이드바 -->
+  <nav id="sidebar">
+    <div id="sidebar-header">
+      <h1>🦙 Olla API</h1>
+      <p>API Documentation</p>
+    </div>
+    <div id="sidebar-nav">
+      <div class="nav-group-label">Index</div>
+      <!-- JS에서 동적으로 채움 -->
+    </div>
+  </nav>
+
+  <!-- Swagger UI -->
+  <div id="main">
+    <div id="swagger-ui"></div>
+  </div>
+
   <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
   <script>
-    SwaggerUIBundle({
-      url: './swagger.json',
-      dom_id: '#swagger-ui',
-      presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
-      layout: 'BaseLayout',
-      deepLinking: true,
-    });
+    // 태그 → 색상 dot 매핑
+    function getDotClass(tag) {
+      if (tag.includes('인증') || tag.includes('Auth')) return 'dot-auth';
+      if (tag.includes('마이페이지')) return 'dot-mypage';
+      if (tag.includes('관심종목') || tag.includes('Watchlist')) return 'dot-watchlist';
+      if (tag.includes('실시간') || tag.includes('Real')) return 'dot-realtime';
+      if (tag.includes('종목') || tag.includes('Stock') || tag.includes('이슈') || tag.includes('Issue')) return 'dot-stock';
+      if (tag.includes('테마') || tag.includes('Theme')) return 'dot-theme';
+      return 'dot-default';
+    }
+
+    // 태그 섹션으로 스크롤 + 열기
+    function scrollToTag(tagName) {
+      // Swagger UI 의 .opblock-tag 버튼 중 data-tag 일치하는 것 찾기
+      const tagButtons = document.querySelectorAll('.opblock-tag[data-tag]');
+      for (const btn of tagButtons) {
+        if (btn.getAttribute('data-tag') === tagName) {
+          const section = btn.closest('section') || btn.parentElement;
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // 닫혀있으면 열기
+          const isCollapsed = btn.classList.contains('arrow') ||
+            section.querySelector('.no-margin') === null;
+          if (section.querySelector('[class*="opblock-tag-section"]')) {
+            const inner = section.querySelector('[class*="opblock-tag-section"]');
+            if (inner && inner.style && inner.style.display === 'none') {
+              btn.click();
+            }
+          } else {
+            // 그냥 클릭해서 토글
+          }
+          return;
+        }
+      }
+
+      // fallback: 텍스트로 찾기
+      const allBtns = document.querySelectorAll('.opblock-tag');
+      for (const btn of allBtns) {
+        if (btn.textContent.trim().startsWith(tagName.split('(')[0].trim())) {
+          btn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
+    }
+
+    // 사이드바 nav 아이템 생성
+    function buildSidebar(tags) {
+      const nav = document.getElementById('sidebar-nav');
+      nav.innerHTML = '<div class="nav-group-label">Index</div>';
+      tags.forEach(tag => {
+        const item = document.createElement('div');
+        item.className = 'nav-item';
+        item.innerHTML = `<span class="dot ${getDotClass(tag)}"></span>${tag}`;
+        item.addEventListener('click', () => {
+          document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+          scrollToTag(tag);
+        });
+        nav.appendChild(item);
+      });
+    }
+
+    // 스크롤 감지로 활성 항목 업데이트
+    function updateActiveOnScroll(tags) {
+      const mainEl = document.getElementById('main');
+      mainEl.addEventListener('scroll', () => {
+        const tagButtons = document.querySelectorAll('.opblock-tag[data-tag]');
+        let currentTag = null;
+        for (const btn of tagButtons) {
+          const rect = btn.getBoundingClientRect();
+          if (rect.top <= 80) currentTag = btn.getAttribute('data-tag');
+        }
+        if (currentTag) {
+          document.querySelectorAll('.nav-item').forEach(el => {
+            const match = tags.find(t => t === currentTag || el.textContent.trim() === currentTag);
+            el.classList.toggle('active', el.textContent.trim() === currentTag);
+          });
+        }
+      }, { passive: true });
+    }
+
+    // Swagger UI 초기화
+    fetch('./swagger.json')
+      .then(r => r.json())
+      .then(spec => {
+        // tags 추출 (paths에서)
+        const tagSet = new Set();
+        Object.values(spec.paths || {}).forEach(methods =>
+          Object.values(methods).forEach(op => (op.tags || []).forEach(t => tagSet.add(t)))
+        );
+        const tags = [...tagSet];
+
+        SwaggerUIBundle({
+          spec,
+          dom_id: '#swagger-ui',
+          presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
+          layout: 'BaseLayout',
+          deepLinking: true,
+          docExpansion: 'list',
+          onComplete: () => {
+            buildSidebar(tags);
+            updateActiveOnScroll(tags);
+          }
+        });
+      });
   </script>
 </body>
 </html>
