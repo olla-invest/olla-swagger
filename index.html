@@ -137,38 +137,32 @@
       return 'dot-default';
     }
 
-    // 태그 섹션으로 스크롤 + 열기
+    // 태그 섹션으로 스크롤 + 펼치기
     function scrollToTag(tagName) {
-      // Swagger UI 의 .opblock-tag 버튼 중 data-tag 일치하는 것 찾기
-      const tagButtons = document.querySelectorAll('.opblock-tag[data-tag]');
-      for (const btn of tagButtons) {
-        if (btn.getAttribute('data-tag') === tagName) {
-          const section = btn.closest('section') || btn.parentElement;
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // data-tag 속성으로 찾기
+      let target = document.querySelector(`.opblock-tag[data-tag="${tagName}"]`);
 
-          // 닫혀있으면 열기
-          const isCollapsed = btn.classList.contains('arrow') ||
-            section.querySelector('.no-margin') === null;
-          if (section.querySelector('[class*="opblock-tag-section"]')) {
-            const inner = section.querySelector('[class*="opblock-tag-section"]');
-            if (inner && inner.style && inner.style.display === 'none') {
-              btn.click();
-            }
-          } else {
-            // 그냥 클릭해서 토글
+      // fallback: 텍스트 내용으로 찾기
+      if (!target) {
+        document.querySelectorAll('.opblock-tag').forEach(el => {
+          if (el.textContent.trim().startsWith(tagName.replace(/ *\(.*\)/, '').trim())) {
+            target = el;
           }
-          return;
-        }
+        });
       }
 
-      // fallback: 텍스트로 찾기
-      const allBtns = document.querySelectorAll('.opblock-tag');
-      for (const btn of allBtns) {
-        if (btn.textContent.trim().startsWith(tagName.split('(')[0].trim())) {
-          btn.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          return;
-        }
-      }
+      if (!target) return;
+
+      // 닫혀 있으면 먼저 열기
+      const section = target.closest('.opblock-tag-section') || target.parentElement;
+      const isClosed = section && section.classList.contains('is-open') === false;
+      if (isClosed) target.click();
+
+      // 열린 후 스크롤 (offset: 20px 여유)
+      setTimeout(() => {
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, isClosed ? 150 : 0);
     }
 
     // 사이드바 nav 아이템 생성
@@ -188,22 +182,18 @@
       });
     }
 
-    // 스크롤 감지로 활성 항목 업데이트
+    // window 스크롤 감지로 활성 항목 업데이트
     function updateActiveOnScroll(tags) {
-      const mainEl = document.getElementById('main');
-      mainEl.addEventListener('scroll', () => {
-        const tagButtons = document.querySelectorAll('.opblock-tag[data-tag]');
+      window.addEventListener('scroll', () => {
         let currentTag = null;
-        for (const btn of tagButtons) {
+        document.querySelectorAll('.opblock-tag[data-tag]').forEach(btn => {
           const rect = btn.getBoundingClientRect();
-          if (rect.top <= 80) currentTag = btn.getAttribute('data-tag');
-        }
-        if (currentTag) {
-          document.querySelectorAll('.nav-item').forEach(el => {
-            const match = tags.find(t => t === currentTag || el.textContent.trim() === currentTag);
-            el.classList.toggle('active', el.textContent.trim() === currentTag);
-          });
-        }
+          if (rect.top <= 60) currentTag = btn.getAttribute('data-tag');
+        });
+        if (!currentTag) return;
+        document.querySelectorAll('.nav-item').forEach(el => {
+          el.classList.toggle('active', el.textContent.trim() === currentTag);
+        });
       }, { passive: true });
     }
 
