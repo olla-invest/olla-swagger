@@ -2427,6 +2427,37 @@
           "마이페이지 - 결제"
         ]
       }
+    },
+    "/payment/webhook/toss": {
+      "post": {
+        "description": "Toss 대시보드에 등록할 URL: POST /payment/webhook/toss",
+        "operationId": "PaymentController_handleTossWebhook",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TossWebhookDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "Toss Payments 웹훅 수신 (인증 불필요)",
+        "tags": [
+          "마이페이지 - 결제"
+        ]
+      }
     }
   },
   "info": {
@@ -2723,6 +2754,10 @@
           "authKey",
           "customerKey"
         ]
+      },
+      "TossWebhookDto": {
+        "type": "object",
+        "properties": {}
       }
     }
   }
