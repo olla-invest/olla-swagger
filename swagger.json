@@ -194,6 +194,87 @@
         ]
       }
     },
+    "/users/me": {
+      "get": {
+        "description": "이름, 이메일, 휴대폰, 플랜 정보 반환",
+        "operationId": "UsersController_getMyProfile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "내 프로필 조회",
+        "tags": [
+          "마이페이지 - 사용자"
+        ]
+      },
+      "patch": {
+        "description": "이름, 휴대폰 번호 수정",
+        "operationId": "UsersController_updateProfile",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProfileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "프로필 수정",
+        "tags": [
+          "마이페이지 - 사용자"
+        ]
+      }
+    },
+    "/users/me/marketing": {
+      "patch": {
+        "description": "ON: 동의, OFF: 거부",
+        "operationId": "UsersController_updateMarketingConsent",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarketingConsentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "마케팅 수신 설정 변경",
+        "tags": [
+          "마이페이지 - 사용자"
+        ]
+      }
+    },
     "/watchlist/stocks": {
       "get": {
         "operationId": "WatchlistController_getWatchlistStocks",
@@ -2114,6 +2195,238 @@
           "이슈테마 (Issue Theme)"
         ]
       }
+    },
+    "/subscription/me": {
+      "get": {
+        "description": "현재 플랜, 결제일, 상태, 등록 카드 반환",
+        "operationId": "SubscriptionController_getMySubscription",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "내 구독 정보 조회",
+        "tags": [
+          "마이페이지 - 구독"
+        ]
+      }
+    },
+    "/subscription/upgrade/preview": {
+      "post": {
+        "description": "결제 전 오늘 결제 금액 안내",
+        "operationId": "SubscriptionController_previewUpgrade",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpgradePlanDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "업그레이드 차액 미리보기",
+        "tags": [
+          "마이페이지 - 구독"
+        ]
+      }
+    },
+    "/subscription/downgrade": {
+      "post": {
+        "description": "현재 구독 기간 종료 후 하위 플랜으로 변경 예약",
+        "operationId": "SubscriptionController_scheduleDowngrade",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DowngradePlanDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "다운그레이드 예약",
+        "tags": [
+          "마이페이지 - 구독"
+        ]
+      },
+      "delete": {
+        "operationId": "SubscriptionController_cancelDowngrade",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "다운그레이드 예약 취소",
+        "tags": [
+          "마이페이지 - 구독"
+        ]
+      }
+    },
+    "/subscription/cancel": {
+      "post": {
+        "description": "현재 구독 기간 종료 후 FREE 플랜으로 전환 예약",
+        "operationId": "SubscriptionController_cancelSubscription",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "구독 해지 예약",
+        "tags": [
+          "마이페이지 - 구독"
+        ]
+      }
+    },
+    "/payment/billing-auth": {
+      "post": {
+        "description": "빌링키 발급 후 즉시 결제. 신규 구독 또는 무료→유료 전환 시 사용",
+        "operationId": "PaymentController_registerCardAndPay",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BillingAuthDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "카드 등록 + 첫 결제",
+        "tags": [
+          "마이페이지 - 결제"
+        ]
+      }
+    },
+    "/payment/card": {
+      "patch": {
+        "description": "빌링키 재발급 (즉시 결제 없음)",
+        "operationId": "PaymentController_changeCard",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeCardDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "결제 카드 변경",
+        "tags": [
+          "마이페이지 - 결제"
+        ]
+      },
+      "get": {
+        "operationId": "PaymentController_getMyCard",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "등록된 결제 카드 조회",
+        "tags": [
+          "마이페이지 - 결제"
+        ]
+      }
+    },
+    "/payment/history": {
+      "get": {
+        "operationId": "PaymentController_getPaymentHistory",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "조회 건수 (기본: 10)",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
+        "summary": "결제 내역 조회",
+        "tags": [
+          "마이페이지 - 결제"
+        ]
+      }
     }
   },
   "info": {
@@ -2247,6 +2560,11 @@
       "ChangePasswordDto": {
         "type": "object",
         "properties": {
+          "currentPassword": {
+            "type": "string",
+            "example": "currentPassword123!",
+            "description": "현재 비밀번호"
+          },
           "newPassword": {
             "type": "string",
             "example": "newPassword123!",
@@ -2259,8 +2577,151 @@
           }
         },
         "required": [
+          "currentPassword",
           "newPassword",
           "confirmPassword"
+        ]
+      },
+      "UpdateProfileDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "홍길동",
+            "description": "이름"
+          },
+          "phone": {
+            "type": "string",
+            "example": "01012345678",
+            "description": "휴대폰 번호 (숫자만)"
+          }
+        }
+      },
+      "MarketingConsentDto": {
+        "type": "object",
+        "properties": {
+          "consent": {
+            "type": "boolean",
+            "example": true,
+            "description": "마케팅 수신 동의 여부 (true: 동의, false: 거부)"
+          }
+        },
+        "required": [
+          "consent"
+        ]
+      },
+      "UpgradePlanDto": {
+        "type": "object",
+        "properties": {
+          "targetPlan": {
+            "type": "string",
+            "enum": [
+              "FREE",
+              "BASIC",
+              "PRO",
+              "PREMIUM"
+            ],
+            "example": "PRO",
+            "description": "변경할 플랜"
+          },
+          "billingCycle": {
+            "type": "string",
+            "enum": [
+              "MONTHLY",
+              "YEARLY"
+            ],
+            "example": "MONTHLY",
+            "description": "결제 주기"
+          }
+        },
+        "required": [
+          "targetPlan",
+          "billingCycle"
+        ]
+      },
+      "DowngradePlanDto": {
+        "type": "object",
+        "properties": {
+          "targetPlan": {
+            "type": "string",
+            "enum": [
+              "FREE",
+              "BASIC",
+              "PRO",
+              "PREMIUM"
+            ],
+            "example": "BASIC",
+            "description": "다운그레이드할 플랜"
+          },
+          "billingCycle": {
+            "type": "string",
+            "enum": [
+              "MONTHLY",
+              "YEARLY"
+            ],
+            "example": "MONTHLY",
+            "description": "결제 주기"
+          }
+        },
+        "required": [
+          "targetPlan",
+          "billingCycle"
+        ]
+      },
+      "BillingAuthDto": {
+        "type": "object",
+        "properties": {
+          "authKey": {
+            "type": "string",
+            "description": "Toss Payments 빌링키 발급 인증 키 (클라이언트에서 발급)"
+          },
+          "customerKey": {
+            "type": "string",
+            "description": "고객 키 (클라이언트에서 생성한 UUID)"
+          },
+          "planType": {
+            "type": "string",
+            "enum": [
+              "FREE",
+              "BASIC",
+              "PRO",
+              "PREMIUM"
+            ],
+            "example": "PRO",
+            "description": "구독할 플랜"
+          },
+          "billingCycle": {
+            "type": "string",
+            "enum": [
+              "MONTHLY",
+              "YEARLY"
+            ],
+            "example": "MONTHLY",
+            "description": "결제 주기"
+          }
+        },
+        "required": [
+          "authKey",
+          "customerKey",
+          "planType",
+          "billingCycle"
+        ]
+      },
+      "ChangeCardDto": {
+        "type": "object",
+        "properties": {
+          "authKey": {
+            "type": "string",
+            "description": "Toss Payments 빌링키 발급 인증 키 (클라이언트에서 발급)"
+          },
+          "customerKey": {
+            "type": "string",
+            "description": "고객 키 (클라이언트에서 생성한 UUID)"
+          }
+        },
+        "required": [
+          "authKey",
+          "customerKey"
         ]
       }
     }
