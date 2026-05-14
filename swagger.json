@@ -639,6 +639,16 @@
               "example": "20260404",
               "type": "string"
             }
+          },
+          {
+            "name": "adjustedPrice",
+            "required": false,
+            "in": "query",
+            "description": "수정주가구분 (0: 비조정, 1: 수정주가, 기본값 1)",
+            "schema": {
+              "example": "1",
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -722,6 +732,41 @@
         ]
       }
     },
+    "/real-time-chart/candles/year/{stockCode}": {
+      "get": {
+        "operationId": "RealTimeChartController_getYearCandles",
+        "parameters": [
+          {
+            "name": "stockCode",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "example": "005930",
+              "type": "string"
+            }
+          },
+          {
+            "name": "baseDate",
+            "required": false,
+            "in": "query",
+            "description": "기준일자 (YYYYMMDD)",
+            "schema": {
+              "example": "20260404",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "연봉 차트 조회",
+        "tags": [
+          "실시간 차트 (Real-time Chart)"
+        ]
+      }
+    },
     "/real-time-chart/summary/{stockCode}": {
       "get": {
         "description": "현재가, 전일대비, 거래량, 거래대금, 1일 고저, 52주 고저",
@@ -772,7 +817,8 @@
                 "tick",
                 "day",
                 "week",
-                "month"
+                "month",
+                "year"
               ],
               "type": "string"
             }
@@ -1172,7 +1218,7 @@
               "schema": {
                 "example": {
                   "marketType": "all",
-                  "days": 130
+                  "days": 330
                 }
               }
             }
@@ -1184,6 +1230,42 @@
           }
         },
         "summary": "[관리자] 전체 종목 일봉 백필",
+        "tags": [
+          "실시간 차트 (Real-time Chart)"
+        ]
+      }
+    },
+    "/real-time-chart/backfill/higher-timeframes": {
+      "post": {
+        "description": "Fire-and-forget. stock_candles에 candle_type week/month/year로 저장.",
+        "operationId": "RealTimeChartController_backfillHigherTimeframeCandles",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "marketType": "all",
+                  "candleTypes": [
+                    "week",
+                    "month",
+                    "year"
+                  ],
+                  "stockCodes": [
+                    "327260"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "[관리자] 전체/선택 종목 주봉·월봉·연봉 백필",
         "tags": [
           "실시간 차트 (Real-time Chart)"
         ]
@@ -2594,7 +2676,7 @@
           "currentPassword": {
             "type": "string",
             "example": "currentPassword123!",
-            "description": "현재 비밀번호"
+            "description": "현재 비밀번호 (임시 비밀번호 변경 시 생략 가능)"
           },
           "newPassword": {
             "type": "string",
@@ -2608,7 +2690,6 @@
           }
         },
         "required": [
-          "currentPassword",
           "newPassword",
           "confirmPassword"
         ]
