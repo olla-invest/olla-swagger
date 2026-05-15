@@ -198,7 +198,7 @@
     }
 
     // Swagger UI 초기화
-    fetch('./swagger.json')
+    fetch(`./swagger.json?v=${Date.now()}`)
       .then(r => r.json())
       .then(spec => {
         // tags 추출 (paths에서)
