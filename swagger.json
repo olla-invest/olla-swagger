@@ -21,28 +21,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -75,28 +58,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -125,32 +91,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -179,32 +128,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -222,32 +154,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -265,32 +180,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -308,32 +206,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -351,32 +232,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -404,32 +268,15 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -453,32 +300,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -510,32 +340,15 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -569,32 +382,15 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -617,32 +413,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -675,32 +454,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -734,32 +496,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -782,32 +527,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -840,32 +568,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -899,32 +610,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -947,32 +641,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -995,32 +672,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1043,32 +703,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1120,32 +763,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1189,32 +815,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1252,32 +861,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1325,32 +917,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1388,32 +963,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1451,32 +1009,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1514,32 +1055,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1568,32 +1092,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1665,32 +1172,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1720,32 +1210,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1775,32 +1248,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1833,32 +1289,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1891,32 +1330,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1934,32 +1356,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -1977,32 +1382,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2020,32 +1408,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2157,32 +1528,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2233,32 +1587,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2289,32 +1626,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2346,32 +1666,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2410,32 +1713,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2454,32 +1740,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2498,32 +1767,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2542,32 +1794,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2599,32 +1834,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2642,32 +1860,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2699,32 +1900,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2758,32 +1942,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2813,32 +1980,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2869,32 +2019,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2925,32 +2058,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -2982,32 +2098,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3061,32 +2160,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3120,32 +2202,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3181,32 +2246,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3281,32 +2329,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3332,32 +2363,15 @@
         ],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3391,32 +2405,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3434,32 +2431,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3489,32 +2469,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3554,32 +2517,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3619,32 +2565,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3684,32 +2613,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3772,7 +2684,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
@@ -3816,32 +2728,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3871,32 +2766,15 @@
         ],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3925,32 +2803,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -3980,32 +2841,15 @@
         ],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4045,32 +2889,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4100,32 +2927,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4154,32 +2964,15 @@
         ],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4211,32 +3004,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4260,32 +3036,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4304,32 +3063,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4348,32 +3090,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4392,32 +3117,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4451,32 +3159,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4510,32 +3201,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4556,32 +3230,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4605,32 +3262,15 @@
         "parameters": [],
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4664,32 +3304,15 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4723,32 +3346,15 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4769,32 +3375,15 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4827,32 +3416,15 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
@@ -4886,32 +3458,15 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "JSON response",
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    },
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": true
-                      }
-                    },
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "number"
-                    },
-                    {
-                      "type": "boolean"
-                    }
-                  ]
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
                 }
               }
             }
