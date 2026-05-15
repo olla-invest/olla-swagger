@@ -1980,7 +1980,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StockNewsResponseDto"
+                }
+              }
+            }
           }
         },
         "summary": "종목 뉴스 조회",
@@ -2720,6 +2727,72 @@
         },
         "required": [
           "consent"
+        ]
+      },
+      "StockNewsItemDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Samsung Electronics announces new AI chip"
+          },
+          "description": {
+            "type": "string",
+            "example": "Article summary text"
+          },
+          "pubDate": {
+            "type": "string",
+            "example": "Fri, 15 May 2026 09:30:00 +0900"
+          },
+          "link": {
+            "type": "string",
+            "example": "https://news.naver.com/example"
+          },
+          "originUrl": {
+            "type": "string",
+            "example": "https://www.hankyung.com/article/2026051500001"
+          },
+          "mediaName": {
+            "type": "string",
+            "example": "Korea Economic Daily"
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "pubDate",
+          "link",
+          "originUrl",
+          "mediaName"
+        ]
+      },
+      "StockNewsResponseDto": {
+        "type": "object",
+        "properties": {
+          "stockCode": {
+            "type": "string",
+            "example": "005930"
+          },
+          "companyName": {
+            "type": "string",
+            "example": "Samsung Electronics"
+          },
+          "total": {
+            "type": "number",
+            "example": 1324
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StockNewsItemDto"
+            }
+          }
+        },
+        "required": [
+          "stockCode",
+          "companyName",
+          "total",
+          "items"
         ]
       },
       "UpgradePlanDto": {
