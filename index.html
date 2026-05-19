@@ -198,9 +198,80 @@
     }
 
     // Swagger UI 초기화
+    function normalizeOpenApiResponses(spec) {
+      if (!Array.isArray(spec.servers) || spec.servers.length === 0) {
+        spec.servers = [
+          {
+            url: 'https://ballot-pack-donations-exposure.trycloudflare.com',
+            description: 'Public backend'
+          },
+          {
+            url: 'http://localhost:3000',
+            description: 'Local backend'
+          }
+        ];
+      }
+
+      Object.values(spec.paths || {}).forEach(methods => {
+        Object.values(methods || {}).forEach(op => {
+          Object.values(op.responses || {}).forEach(response => {
+            if (!response.description) response.description = 'JSON response';
+
+            const content = response.content || {};
+            const jsonMedia = content['application/json'];
+            const jsonSchema = jsonMedia && jsonMedia.schema;
+
+            if (jsonSchema) {
+              if (jsonSchema.type === 'object' && !jsonSchema.properties) {
+                const message = jsonSchema.example && jsonSchema.example.message
+                  ? jsonSchema.example.message
+                  : response.description;
+                jsonSchema.properties = {
+                  message: {
+                    type: 'string',
+                    example: message
+                  }
+                };
+                jsonSchema.required = jsonSchema.required || ['message'];
+              }
+
+              jsonMedia.example = jsonMedia.example || jsonSchema.example || {
+                message: response.description
+              };
+              return;
+            }
+
+            response.content = {
+              ...content,
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    message: {
+                      type: 'string',
+                      example: response.description
+                    }
+                  },
+                  required: ['message'],
+                  additionalProperties: true
+                },
+                example: {
+                  message: response.description
+                }
+              }
+            };
+          });
+        });
+      });
+
+      return spec;
+    }
+
     fetch(`./swagger.json?v=${Date.now()}`)
       .then(r => r.json())
       .then(spec => {
+        spec = normalizeOpenApiResponses(spec);
+
         // tags 추출 (paths에서)
         const tagSet = new Set();
         Object.values(spec.paths || {}).forEach(methods =>
