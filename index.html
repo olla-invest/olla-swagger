@@ -126,6 +126,8 @@
 
   <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
   <script>
+    const API_SERVER_URL = 'https://ballot-pack-donations-exposure.trycloudflare.com';
+
     // 태그 → 색상 dot 매핑
     function getDotClass(tag) {
       if (tag.includes('인증') || tag.includes('Auth')) return 'dot-auth';
@@ -199,18 +201,14 @@
 
     // Swagger UI 초기화
     function normalizeOpenApiResponses(spec) {
-      if (!Array.isArray(spec.servers) || spec.servers.length === 0) {
-        spec.servers = [
-          {
-            url: 'https://ballot-pack-donations-exposure.trycloudflare.com',
-            description: 'Public backend'
-          },
-          {
-            url: 'http://localhost:3000',
-            description: 'Local backend'
-          }
-        ];
-      }
+      const servers = Array.isArray(spec.servers) ? spec.servers : [];
+      spec.servers = [
+        {
+          url: API_SERVER_URL,
+          description: 'Public backend'
+        },
+        ...servers.filter(server => server && server.url !== API_SERVER_URL)
+      ];
 
       Object.values(spec.paths || {}).forEach(methods => {
         Object.values(methods || {}).forEach(op => {
@@ -286,6 +284,12 @@
           layout: 'BaseLayout',
           deepLinking: true,
           docExpansion: 'list',
+          requestInterceptor: request => {
+            if (request.url && request.url.startsWith(window.location.origin)) {
+              request.url = request.url.replace(window.location.origin, API_SERVER_URL);
+            }
+            return request;
+          },
           onComplete: () => {
             buildSidebar(tags);
             updateActiveOnScroll(tags);
