@@ -99,6 +99,15 @@
     /* Swagger UI 상단 topbar 숨기기 (선택) */
     .topbar { display: none !important; }
 
+    /* Read-only docs: hide live request controls/results */
+    .try-out,
+    .execute-wrapper,
+    .curl-command,
+    .request-url,
+    .live-responses-table {
+      display: none !important;
+    }
+
     /* 스크롤바 */
     #sidebar::-webkit-scrollbar { width: 4px; }
     #sidebar::-webkit-scrollbar-track { background: transparent; }
@@ -344,6 +353,19 @@
           spec,
           dom_id: '#swagger-ui',
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
+          plugins: [
+            function DisableExecutePlugin() {
+              return {
+                statePlugins: {
+                  spec: {
+                    wrapActions: {
+                      executeRequest: () => () => null
+                    }
+                  }
+                }
+              };
+            }
+          ],
           layout: 'BaseLayout',
           deepLinking: true,
           docExpansion: 'list',
