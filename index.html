@@ -200,6 +200,69 @@
     }
 
     // Swagger UI 초기화
+    function resolveSchemaRef(spec, schema) {
+      if (!schema || typeof schema !== 'object' || !schema.$ref) return schema;
+
+      const path = schema.$ref.replace(/^#\//, '').split('/');
+      return path.reduce((current, key) => {
+        if (!current) return undefined;
+        return current[key];
+      }, spec);
+    }
+
+    function buildExampleFromSchema(spec, schema, seen = new Set()) {
+      if (schema && typeof schema === 'object' && schema.$ref) {
+        if (seen.has(schema.$ref)) return null;
+        seen.add(schema.$ref);
+      }
+
+      const resolved = resolveSchemaRef(spec, schema);
+      if (!resolved || typeof resolved !== 'object') return null;
+
+      if (resolved.example !== undefined) return resolved.example;
+      if (resolved.default !== undefined) return resolved.default;
+
+      if (resolved.allOf) {
+        return resolved.allOf.reduce((example, item) => {
+          const itemExample = buildExampleFromSchema(spec, item, seen);
+          return typeof itemExample === 'object' && !Array.isArray(itemExample)
+            ? { ...example, ...itemExample }
+            : example;
+        }, {});
+      }
+
+      if (resolved.oneOf || resolved.anyOf) {
+        return buildExampleFromSchema(spec, (resolved.oneOf || resolved.anyOf)[0], seen);
+      }
+
+      if (resolved.type === 'array') {
+        return [buildExampleFromSchema(spec, resolved.items, seen)];
+      }
+
+      if (resolved.type === 'object' || resolved.properties) {
+        return Object.entries(resolved.properties || {}).reduce((example, [key, value]) => {
+          example[key] = buildExampleFromSchema(spec, value, seen);
+          return example;
+        }, {});
+      }
+
+      if (resolved.enum && resolved.enum.length) return resolved.enum[0];
+
+      switch (resolved.type) {
+        case 'integer':
+        case 'number':
+          return 0;
+        case 'boolean':
+          return true;
+        case 'string':
+          if (resolved.format === 'date-time') return '2026-05-23T00:00:00.000Z';
+          if (resolved.format === 'date') return '2026-05-23';
+          return 'string';
+        default:
+          return null;
+      }
+    }
+
     function normalizeOpenApiResponses(spec) {
       const servers = Array.isArray(spec.servers) ? spec.servers : [];
       spec.servers = [
@@ -233,7 +296,7 @@
                 jsonSchema.required = jsonSchema.required || ['message'];
               }
 
-              jsonMedia.example = jsonMedia.example || jsonSchema.example || {
+              jsonMedia.example = jsonMedia.example || jsonSchema.example || buildExampleFromSchema(spec, jsonSchema) || {
                 message: response.description
               };
               return;
@@ -284,6 +347,8 @@
           layout: 'BaseLayout',
           deepLinking: true,
           docExpansion: 'list',
+          supportedSubmitMethods: [],
+          defaultModelRendering: 'model',
           requestInterceptor: request => {
             if (request.url && request.url.startsWith(window.location.origin)) {
               request.url = request.url.replace(window.location.origin, API_SERVER_URL);
