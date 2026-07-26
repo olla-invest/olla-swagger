@@ -3575,33 +3575,12 @@
         "operationId": "IssueThemeController_getThemeList",
         "parameters": [
           {
-            "name": "display",
+            "name": "minThemeScore",
             "required": false,
             "in": "query",
-            "description": "페이지당 항목 수",
+            "description": "테마 종합 점수 최소값",
             "schema": {
-              "example": "20",
-              "type": "number"
-            }
-          },
-          {
-            "name": "page",
-            "required": false,
-            "in": "query",
-            "description": "페이지 번호",
-            "schema": {
-              "example": "1",
-              "type": "number"
-            }
-          },
-          {
-            "name": "minAvgRsScore",
-            "required": false,
-            "in": "query",
-            "description": "테마 평균 RS 점수 최소값",
-            "schema": {
-              "example": "80",
-              "type": "number"
+              "example": "70"
             }
           },
           {
@@ -3610,18 +3589,34 @@
             "in": "query",
             "description": "집계 대상 종목 최소 개수",
             "schema": {
-              "example": "3",
-              "type": "number"
+              "example": "3"
             }
           },
           {
-            "name": "minThemeScore",
+            "name": "minAvgRsScore",
             "required": false,
             "in": "query",
-            "description": "테마 종합 점수 최소값",
+            "description": "테마 평균 RS 점수 최소값",
             "schema": {
-              "example": "70",
-              "type": "number"
+              "example": "80"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "페이지 번호",
+            "schema": {
+              "example": "1"
+            }
+          },
+          {
+            "name": "display",
+            "required": false,
+            "in": "query",
+            "description": "페이지당 항목 수",
+            "schema": {
+              "example": "20"
             }
           }
         ],
@@ -3975,6 +3970,92 @@
           }
         },
         "summary": "[관리자] 테마 일별 스냅샷 백필",
+        "tags": [
+          "이슈테마 (Issue Theme)"
+        ]
+      }
+    },
+    "/issue-theme/ai-summary/generate": {
+      "post": {
+        "operationId": "IssueThemeController_generateAiSummaries",
+        "parameters": [
+          {
+            "name": "tradeDate",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "[관리자] 거래일 테마 AI 요약 생성 또는 재시도",
+        "tags": [
+          "이슈테마 (Issue Theme)"
+        ]
+      }
+    },
+    "/issue-theme/ai-summary/{themeCode}/regenerate": {
+      "post": {
+        "operationId": "IssueThemeController_regenerateAiSummary",
+        "parameters": [
+          {
+            "name": "themeCode",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "tradeDate",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "example": {
+                    "message": "JSON response"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "[관리자] 단일 테마 AI 요약 재생성",
         "tags": [
           "이슈테마 (Issue Theme)"
         ]
